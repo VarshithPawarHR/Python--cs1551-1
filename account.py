@@ -1,22 +1,22 @@
 class Account:
 
     def __init__(self,number):
-        self.__number=number
-        self.__balance=100
+        self.number=number
+        self.balance=100
        
     def deposit(self,amount):
-        self.__balance+=amount
-        print("Account balance is:",self.__balance)
+        self.balance+=amount
+        print("Account balance is:",self.balance)
        
     def withdraw(self,amount):
-        if self.__balance-amount<100:
+        if self.balance-amount<100:
             print("low balance for withdrawal")
         else:
-            self.__balance-=amount
-            print("Account balance:",self.__balance)
+            self.balance-=amount
+            print("Account balance:",self.balance)
            
     def getbalance(self):
-        return self.__balance
+        return self.balance
    
 acclist=[]
 accnolist=[]
