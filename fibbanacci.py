@@ -1,9 +1,9 @@
 def fib(n):
-  fibnext = [0,1]
-  while(len(fibnext)<n):
-    nextval = fibnext[-1]+fibnext[-2]
-    fibnext.append(nextval)
-  return fibnext[:n] 
+  fibi = [0,1]
+  for i in range(n):
+    nextval = fibi[-1]+fibi[-2]
+    fibi.append(nextval)
+  return fibi[:n]\
 
-n = int(input('enter the number who u want to fibacci series'))
-print(fib(n)) 
+n = int(input("enter the number"))
+print('fibanassci series is', fib(n))    
