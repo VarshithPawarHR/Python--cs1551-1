@@ -9,10 +9,11 @@ class Account:
 
     def withdraw(self, amount):
         if self.__balance-amount < 100:
-            print("insuffiecient balance")
+            print("insufficient balance")
+
         else:
             self.__balance -= amount
-            print("amount is : ", self.__balance)
+            print("balance is ", self.__balance)
 
     def getbalance(self):
         return self.__balance
@@ -22,40 +23,44 @@ acclst = []
 accnolst = []
 
 while True:
-    print("choose one option \n")
-    print("1.create account \n 2.deposit \n 3.withdraw \n 4.highest balance \n 5.exit ")
 
-    choice = int(input('enter your choice'))
+    print("choose one option")
+
+    print("1.create account \n 2.deposit \n 3.withdraw \n 4.highest amount \n 5.exit")
+
+    choice = int(input("enter your choice"))
 
     if choice == 1:
+
         number = int(input("enter the account number"))
+
         if number in accnolst:
-            print("account already exits")
+            print("account already exists")
         else:
             new = Account(number)
             acclst.append(new)
             accnolst.append(number)
 
     elif choice == 2:
-        number = int(input("enter the account number "))
+
+        number = int(input("enter the account number"))
 
         if number in accnolst:
-            amount = float(input("enter the amount you want to deposit"))
+            amount = float(input("enter the amount"))
             index = accnolst.index(number)
             acclst[index].deposit(amount)
         else:
-            print("invalid account number")
+            print("no such account")
 
     elif choice == 3:
-        number = int(input("enter the account number "))
+        number = int(input("enter the account number"))
 
         if number in accnolst:
-            amount = float(input("enter the amount you want to withdraw"))
+            amount = float(input("enter the amount"))
             index = accnolst.index(number)
             acclst[index].withdraw(amount)
         else:
-            print("invalid account number")
-
+            print("no such account")
     elif choice == 4:
         ballst = []
 
@@ -63,13 +68,11 @@ while True:
             ballst.append(object.getbalance())
 
         if len(ballst) == 0:
-            print("no information")
-
+            print("no account")
         else:
             high = max(ballst)
             index = ballst.index(high)
-
-            print("maximum amount is ", high)
-            print("account number is ", accnolst[index])
+            print("account number with maximum amount is ",
+                  accnolst[index], "amounbt is ", high)
     else:
         break
