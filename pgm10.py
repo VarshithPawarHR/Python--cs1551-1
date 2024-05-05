@@ -1,17 +1,18 @@
-def smallindex(list):
-    small = min(list)
-    index = list.index(small)
+lst = []
+
+
+def smallindex(lst):
+    small = min(lst)
+    index = lst.index(small)
     return small, index
 
 
-list = []
-
 count = int(input("enter the size of list"))
+
 for ch in range(count):
-    val = int(input("enter the values to list"))
-    list.append(val)
+    val = int(input("enter the list element"))
+    lst.append(val)
 
-smallele, index = smallindex(list)
+small, index = smallindex(lst)
 
-print("smallest element is ", smallele)
-print("its index is ", index)
+print("smallest element in the list is", small, "its index is ", index)

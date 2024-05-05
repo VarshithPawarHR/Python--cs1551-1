@@ -3,14 +3,14 @@ import random
 random = random.randint(1, 10)
 
 while True:
-    guess = int(input("enter your guess"))
+    guess = int(input("enter your guess number "))
 
     if guess == random:
-        print("your guess is correct")
+        print("you won bravo")
         break
-    elif guess < random:
-        print("guess is less")
-    elif guess > random:
-        print("guess is greater")
+    if guess < random:
+        print("your guess is less")
+    if guess > random:
+        print("your guess is large")
 
 print("gameover")

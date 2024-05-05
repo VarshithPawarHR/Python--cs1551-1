@@ -1,11 +1,11 @@
 punstr = "’!()-[]{};:’’’,\,<>,/,?,@,#,$,%^&*_~"
 
-inputstr = input("enter the string")
+str1 = input("enter the string ")
 
-outputstr = ""
+outputstr1 = ""
 
-for ch in inputstr:
+for ch in str1:
     if ch not in punstr:
-        outputstr = outputstr + ch
+        outputstr1 += ch
 
-print("output is :", outputstr)
+print("out put is", outputstr1)

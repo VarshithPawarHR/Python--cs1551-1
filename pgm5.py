@@ -1,10 +1,9 @@
 str1 = input("enter the string")
 
-count = 0
+outstr = ""
 
-for i in range(len(str1)):
-    if str1[i].isupper():
-        count += 1
-        print("capital letter ", str1[i], "is present in position", i+1)
+for ch in str1:
+    if ch.isupper():
+        outstr += ch
 
-print("number of upper case letters is ", count)
+print("out put is", outstr)
