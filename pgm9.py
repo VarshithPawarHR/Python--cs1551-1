@@ -1,38 +1,38 @@
-list = []
+list1 = []
 
 
-def readelements(list):
-    count = int(input('enter the number of elements you want to insert'))
-    for i in range(count):
-        val = int(input('enter the element '))
-        list.append(val)
+def readelements(lst):
+    n = int(input("enter the size of the list"))
+
+    for i in range(n):
+        val = int(input("enter the element "))
+        lst.append(val)
 
 
-readelements(list)
+readelements(list1)
 
 
-def binarsearch(list, n):
-    list.sort()
+def binarysearch(lst, n):
+    lst.sort()
     low = 0
-    high = len(list)-1
-    mid = 0
+    high = len(lst) - 1
 
     while low <= high:
         mid = (low+high)//2
 
-        if list[mid] < n:
+        if lst[mid] < n:
             low = mid + 1
-        elif list[mid] > n:
-            high = mid-1
+        elif lst[mid] > n:
+            high = mid - 1
         else:
             return mid
     return -1
 
 
-key = int(input('enter the key u want to search'))
-result = binarsearch(list, key)
+key = int(input("enter the value of key u want to search"))
+result = binarysearch(list1, key)
 
 if result == -1:
-    print('key not found')
+    print("key not found")
 else:
-    print('key is found in the position', result)
+    print("key is found at the index", result)
